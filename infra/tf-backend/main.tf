@@ -1,9 +1,10 @@
 provider "azurerm" {
   features {}
+  subscription_id = "0b1b9793-6f4c-4e8c-bf77-ce5c2eff63c4"
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "<your-college-id>-githubactions-rg"
+  name     = "husa0023-githubactions-rg"
   location = "Canada Central"
 }
 
@@ -18,7 +19,7 @@ resource "azurerm_storage_account" "storage" {
 
 resource "azurerm_storage_container" "tfstate" {
   name                  = "tfstate"
-  storage_account_id = azurerm_storage_account.storage.id
+  storage_account_id    = azurerm_storage_account.storage.id
   container_access_type = "private"
 }
 
